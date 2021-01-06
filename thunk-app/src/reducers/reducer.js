@@ -16,7 +16,7 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 loading: false,
-                data: action.payload
+                roster: action.payload.roster
             }
         case "GET_ROSTER_FAILURE":
             return{

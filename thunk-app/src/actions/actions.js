@@ -10,11 +10,11 @@ export const getRoster = () => (dispatch) => {
         .get("https://statsapi.web.nhl.com/api/v1/teams/54/roster", {headers: headers})
         .then( res => {
             dispatch({type:"GET_ROSTER_SUCCESS", payload: res.data})
-            console.log(res)
+            // console.log(res)
         })
         .catch(err => {
             dispatch({type:"GET_ROSTER_FAILURE", payload: err})
-            console.log(err)
+            // console.log(err)
         })
 
 
