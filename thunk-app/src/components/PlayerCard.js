@@ -1,8 +1,12 @@
 import React from 'react'
 import {
-    Card, CardText, CardBody,
+    Card, 
+    // CardText, 
+    CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+import {getSpotlight} from '../actions/actions';
+// import {connect} from 'react-redux'
 
 const PlayerCard = (props) => {
 // console.log("props", props)
@@ -15,11 +19,11 @@ const PlayerCard = (props) => {
                     {/* Position they play */}
                     <CardSubtitle tag="h6" className="mb-2 text-muted">Number: {props.number}</CardSubtitle>
                     {/* Position they play */}
-                    <CardText tag="h6" className="mb-2">{props.position}</CardText>
+                    {/* <CardText tag="h6" className="mb-2">{props.position}</CardText> */}
                     {/* Their positions 'role' (F/D/G) */}
-                    <CardText>{props.role}</CardText>
+                    {/* <CardText>{props.role}</CardText> */}
                     {/* Link to more details */}
-                    <Button> More Info</Button>
+                    <Button onClick={()=>getSpotlight(props.player.link)}> More Info</Button>
                 </CardBody>
             </Card>
             
@@ -27,6 +31,7 @@ const PlayerCard = (props) => {
     )
 }
 
+// const mapDispatchToProps = {getSpotlight}
 
 export default PlayerCard;
 

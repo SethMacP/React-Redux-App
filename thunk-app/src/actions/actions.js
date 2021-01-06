@@ -16,6 +16,19 @@ export const getRoster = () => (dispatch) => {
             dispatch({type:"GET_ROSTER_FAILURE", payload: err})
             // console.log(err)
         })
+}
 
+export const getSpotlight = (link) => (dispatch)=> {
+    dispatch({type:"GET_SPOTLIGHT_START"})
+    axios
+        .get(`https://statsapi.web.nhl.com${link}`, {headers:headers})
+        .then( res => {
+            console.log(res)
+            dispatch({type:"GET_SPOTLIGHT_SUCCESS", payload: res.data})
+        })
+        .catch(err=> {
+            console.log(err)
+            dispatch({type:"GET_SPOTLIGHT_FAILURE", payload: err})
+        })
 
 }
