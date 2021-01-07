@@ -44,6 +44,13 @@
 
 .player{
   width: 300px;
-  margin: 10px;
+  margin: 2px;
+  text-align: center;
+}
+.spotlightContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin: 0 auto;
   text-align: center;
 }

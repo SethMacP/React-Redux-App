@@ -1,3 +1,5 @@
+import {GET_ROSTER_START,GET_ROSTER_SUCCESS,GET_ROSTER_FAILURE,GET_SPOTLIGHT_START, GET_SPOTLIGHT_SUCCESS, GET_SPOTLIGHT_FAILURE} from '../actions/actions'
+
 const initialState = {
     title: "My API Call Site",
     rosterLoading: false,
@@ -44,34 +46,34 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type){
-        case "GET_ROSTER_START":
+        case GET_ROSTER_START:
             return{
                 ...state,
                 rosterLoading: true
             }
-        case "GET_ROSTER_SUCCESS":
+        case GET_ROSTER_SUCCESS:
             return{
                 ...state,
                 rosterLoading: false,
                 roster: action.payload.roster
             }
-        case "GET_ROSTER_FAILURE":
+        case GET_ROSTER_FAILURE:
             return{
                 ...state,
                 rosterLoading: false,
                 error: action.payload
             }
-        case "GET_PLAYER_START":
+        case GET_SPOTLIGHT_START:
             return{...state,
                 playerLoading: true
             }
-        case "GET_PLAYER_SUCCESS":
+        case GET_SPOTLIGHT_SUCCESS:
             return{
                 ...state,
                 playerLoading: false,
                 spotlight: action.payload
             }
-        case "GET_PLAYER_FAILURE":
+        case GET_SPOTLIGHT_FAILURE:
             return{
                 ...state,
                 playerLoading: false,

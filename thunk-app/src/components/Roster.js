@@ -14,9 +14,7 @@ const Roster = ({data, getRoster}) => {
 
     return(
             <>
-                <div>
-                    <button onClick={getRoster}>Click for Data</button>
-                </div>
+                
                 <div className = 'playerContainer'>
                 {data && data.map(player=> (
                     
@@ -27,6 +25,7 @@ const Roster = ({data, getRoster}) => {
                         role = {player.position.type}
                         number = {player.jerseyNumber}
                         player = {player}
+                        data={data}
                         />
                     
                     ))}  
