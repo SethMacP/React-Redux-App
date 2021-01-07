@@ -52,5 +52,8 @@
   flex-flow: row nowrap;
   justify-content: space-around;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+}
+.personalDetails{
+  
 }

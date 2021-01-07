@@ -8,6 +8,7 @@ console.log("spotlightPlayer", spotlightPlayer)
     return(
     <>
         <Jumbotron>
+            <p className=""></p>
             <h1 className="display-2">{spotlightPlayer.people[0].fullName}</h1>
             <p className="lead">{spotlightPlayer.people[0].captain === true ? "[Captain]" : ("")}</p>
             <p className="lead">{spotlightPlayer.people[0].alternateCaptain === true ? "[Alternate Captain]" : ("")}</p>
@@ -21,10 +22,15 @@ console.log("spotlightPlayer", spotlightPlayer)
                     <p className="lead">Height: {spotlightPlayer.people[0].height}</p>
                     <p className="lead">Weight: {spotlightPlayer.people[0].weight}</p>
                 </div>
+                <vr classname="my-2" />
                 <div className = "numberDetails">
                     <p className="lead">Number: {spotlightPlayer.people[0].primaryNumber}</p>
-                    <p className="lead">Height: {spotlightPlayer.people[0].height}</p>
-                    <p className="lead">Weight: {spotlightPlayer.people[0].weight}</p>
+                    <p className="lead">Position: {spotlightPlayer.people[0].primaryPosition.name}</p>
+                    <p className="lead">Role: {spotlightPlayer.people[0].primaryPosition.type}</p>
+                    <p className="lead">
+                        {spotlightPlayer.people[0].primaryPosition.type === "Goalie" ? "Catches: " : "Shoots: " } 
+                        {spotlightPlayer.people[0].shootsCatches}</p>
+                    
                 </div>
                 <div className ="teamDetails">
 
@@ -47,18 +53,18 @@ export default connect(mapStateToProps)(Spotlight);
 
 
 // spotlight.people.
-// fullName
-// currentTeam.name
-// currentAge
-// height
-// weight
-// primaryNumber
-// birthCity
-// birthStateProvince
-// birthCountry
-// birthDate
-// [ternary] captain
-// [ternary] alternateCaptain
-// primaryPosition.name
+// --fullName
+// --currentTeam.name
+// --currentAge
+// --height
+// --weight
+// --primaryNumber
+// --birthCity
+// --birthStateProvince
+// --birthCountry
+// --birthDate
+// --[ternary] captain
+// --[ternary] alternateCaptain
+// --primaryPosition.name
 
 
